@@ -26,3 +26,6 @@ echo "hola\n";
 <br>
 <a href="01-basico/OPERADORES_LOGICOS.php">operadores LOGICOS</a>
 <br>
+<a href="01-basico/bucle-while.php">Bucle</a>
+<br>
+
