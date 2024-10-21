@@ -1,6 +1,6 @@
 <?php
 /**
- * tipos de datos juan.
+ * tipos de datos juan bucles.
  */
 
 echo "hola\n";
