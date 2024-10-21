@@ -1,6 +1,6 @@
 <?php
 /**
- * tipos de datos
+ * tipos de datos juan.
  */
 
 echo "hola\n";
