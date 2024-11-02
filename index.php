@@ -9,3 +9,4 @@
 <a href="01-basico/asignación-por-referencia.php">Asignación	por referencia</a>
 <a href="01-basico/asignación-por-referencia.php">Operadores de comparación</a>
 <a href="01-basico/Operadores-Logicos.php">Operadores Logicos</a>
+<a href="01-basico/Funciones-String.php">Funciones String</a>
