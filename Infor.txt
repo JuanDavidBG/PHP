@@ -1,0 +1,66 @@
+create user JuanDavid@localhost identified by "#Aprendiz2024";
+grant all privileges on adso2894667.* to JuanDavid@localhost;
+Flush privileges;
+SHOW GRANTS FOR JuanDavid@localhost;
+
+---------------------------------------------------------------------
+use adso2894667;
+
+drop table if exists usuarios, generos, ciudades, lenguajes, usuarios_lenguajes;
+
+drop table lenguajes;
+
+create table usuarios(
+id int auto_increment,
+nombre varchar(255),
+apellido varchar(255),
+correo varchar(255),
+fecha_nacimiento DATE,
+id_genero INT,
+id_ciudad int,
+primary key(id),
+FOREIGN KEY (id_genero) REFERENCES generos(id),
+FOREIGN KEY (id_ciudad) REFERENCES ciudades(id)
+);
+
+create table generos(
+id int auto_increment,
+nombre varchar(255),
+primary key(id)
+);
+
+create table ciudades(
+id int auto_increment,
+nombre varchar(255),
+primary key(id)
+);
+
+create table lenguajes(
+id int auto_increment primary key,
+nombre varchar(255)
+);
+
+create table lenguajes_usuarios(
+id_aprendiz int,
+id_lenguaje int,
+FOREIGN KEY (id_aprendiz) REFERENCES usuarios(id),
+FOREIGN KEY (id_lenguaje) REFERENCES lenguajes(id)
+);
+
+
+insert into ciudades (nombre) values
+('Piedecuesta'), ('Girón'),('Bucaramanga'),('Lebrija'),('Floridablanca');
+
+insert into generos (nombre) values ('Masculino'),('Femenino'),('Otros');
+
+insert into generos (nombre) values ('No Identificado');
+
+insert into lenguajes (nombre) values ('Java'),('.Net'),('Sql'),('JavaScript'),('Php'),('Python');
+
+insert into usuarios (nombre,apellido,correo,fecha_nacimiento,id_genero,id_ciudad) values
+('Juan','Bautista','Davidbg581@gmail.com','2006-08-12','5','1');
+
+select * from usuarios;
+DELETE FROM usuarios
+WHERE nombre='Juan';
+describe usuarios;
