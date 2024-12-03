@@ -1,7 +1,6 @@
 <?php
 
-class Conexion
-{
+class Conexion{
     private $conexion;
     private $host = "localhost";
     private $db   = "adso2894667";
