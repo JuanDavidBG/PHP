@@ -1,0 +1,43 @@
+create table lenguajes(
+id_lenguaje int auto_increment,
+lenguaje varchar(30),
+primary key(id_lenguaje));
+
+create table genero(
+id_genero int auto_increment,
+genero varchar(15),
+primary key(id_genero));
+
+create table ciudad(
+id_ciudad int auto_increment,
+ciudad varchar(30),
+primary key(id_ciudad));
+
+create table usuarios(
+id_usuario int auto_increment,
+nombres varchar(50) not null,
+apellidos varchar(50) not null,
+correo varchar(100) not null,
+fecha_nacimiento date,
+id_genero int,
+id_ciudad int,
+primary key(id_usuario),
+unique(correo),
+foreign key (id_genero) references genero(id_genero),
+foreign key (id_ciudad) references ciudad(id_ciudad));
+
+create table lenguaje_usuario(
+id int auto_increment,
+id_usuario int,
+id_lenguaje int,
+primary key(id),
+foreign key (id_usuario) references usuarios(id_usuario),
+foreign key (id_lenguaje) references lenguajes(id_lenguaje));
+
+
+insert into ciudad(ciudad) values ("Bucaramanga"), ("Floridablanca"), ("Girón"), ("Piedecuesta"), ("Lebrija");
+insert into genero(genero) values ("Masculino"), ("Femenino"), ("Otro");
+insert into lenguajes(lenguaje) values ("Java"), (".NET"), ("SQL"), ("Python"), ("JavaScript"), ("PHP");
+
+insert into usuarios(nombres, apellidos, correo, fecha_nacimiento, id_genero, id_ciudad) values
+("Juan David", "Bautista Gómez", "davidbg581@gmail.com", '2006-12-08', 1, 2);

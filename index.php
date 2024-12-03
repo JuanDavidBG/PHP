@@ -8,18 +8,18 @@ $conexion = "";
 $db = new Conexion();
 $conexion = $db->getConexion();
 
-$sql = "SELECT * FROM ciudades";
+$sql = "SELECT * FROM ciudad";
 
 $bandera = $conexion->prepare($sql);
 $bandera->execute();
-$ciudades = $bandera->fetchAll();
+$ciudad = $bandera->fetchAll();
 
 
-$sql = "SELECT * FROM generos";
+$sql = "SELECT * FROM genero";
 
 $bandera = $conexion->prepare($sql);
 $bandera->execute();
-$generos = $bandera->fetchAll();
+$genero = $bandera->fetchAll();
 
 $sql = "SELECT * FROM lenguajes";
 
@@ -84,10 +84,10 @@ $lenguajes = $bandera->fetchAll();
         </div>
 
         <div class="contenedor__label">
-            <label for="ciudad_id">Ciudad: </label>
-            <select name="ciudad_id" id="ciudad_id" name="ciudad">
+            <label for="id_ciudad">Ciudad: </label>
+            <select name="id_ciudad" id="id_ciudad" name="ciudad">
                 <?php 
-                    foreach ($ciudades as $key => $value) {
+                    foreach ($ciudad as $key => $value) {
                         echo $value;
                 ?>      <option value="<?= $value['id'] ?>" value="<?= $value['id'] ?>">
                             <?= $value['nombre'] ?>
@@ -101,7 +101,7 @@ $lenguajes = $bandera->fetchAll();
             <p>Seleccione su genero:</p>
             <div class="generos">
             <?php 
-                foreach ($generos as $key => $value) {
+                foreach ($genero as $key => $value) {
             ?>
                     <div class="generos__contenedor">
                         <label for="<?= $value['id'] ?>" class="generos__label">

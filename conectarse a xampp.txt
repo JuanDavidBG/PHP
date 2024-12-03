@@ -1,0 +1,7 @@
+Primero meterse a la carpeta de c:
+2 xampp 
+3 htdocs 
+4 y meterse a la carpeta
+
+
+http://127.0.0.1/adso2894667/

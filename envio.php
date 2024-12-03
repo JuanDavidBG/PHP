@@ -18,8 +18,7 @@ $apellido = $_REQUEST['apellido'];
 $correo = $_REQUEST['correo'];
 $fecha = $_REQUEST['fecha'];
 $generos = $_REQUEST['generos'];
-$ciudad = $_REQUEST['ciudad_id'];
-
+$ciudad = $_REQUEST['id_ciudad'];
 
 
 $sql = "INSERT INTO usuarios (nombre,apellido,correo,fecha_nacimiento,id_genero,id_ciudad,id_lenguajes) values
